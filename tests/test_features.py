@@ -14,6 +14,7 @@ from titanic_model.processing.features import age_col_tfr
 
 
 def test_age_variable_transformer(sample_input_data):
+  
     # Given
     transformer = age_col_tfr(
         variables=config.model_config.age_var,  # cabin
