@@ -20,13 +20,10 @@ jobs:
         python-version: ${{matrix.python-version}} 
     - name: Install dependencies
       run: |
-        make install
-    - name: Lint with Pylint
+        pip install -r titanic-devops/requirements/test_requirements.txt
+    - name: train_pipeline
       run: |
-        make lint
+        python titanic-devops/titanic_model/train_pipeline.py
     - name: test with pytest
       run: |
-        make test
-    - name: Format with Black
-      run: |
-        make format
+        pytest
